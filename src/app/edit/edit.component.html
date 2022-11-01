@@ -1,0 +1,19 @@
+<p>edit works!</p>
+<table mat-table [dataSource]="dataSource">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns">
+        <th  mat-header-cell *matHeaderCellDef>username</th>
+        <th  mat-header-cell *matHeaderCellDef>password</th>
+        <th  mat-header-cell *matHeaderCellDef>gender</th>
+        <th  mat-header-cell *matHeaderCellDef>dateofbirth</th>
+        <th  mat-header-cell *matHeaderCellDef>Selectanfield</th>
+        <th  mat-header-cell *matHeaderCellDef>Address</th>
+    </tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" >
+        <td *matCellDef="let i">{{i.username}}</td>
+        <td *matCellDef="let i">{{i.password}}</td>
+        <td *matCellDef="let i">{{i.gender}}</td>
+        <td *matCellDef="let i">{{i.dateofbirth}}</td>
+        <td *matCellDef="let i">{{i.Selectanfield}}</td>
+        <td *matCellDef="let i">{{i.Address}}</td>
+    </tr>
+</table>

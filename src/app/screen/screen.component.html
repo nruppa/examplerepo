@@ -1,0 +1,212 @@
+<div >
+    <mat-card>
+        <div>
+            <h1 fxLayoutAlign="center center" style="color:rgba(255, 123, 0, 0.973);">Damaged TC52AX hdPhone Replacement
+                Form
+            </h1>
+            <h3 fxLayoutAlign="center center" style="color:rgba(255, 30, 0, 0.753);"><i>To replace a stolen device or
+                    for ordering additional devices,please use Ariba </i></h3>
+            <h4 fxLayoutAlign="center center" style="color:rgba(0, 0, 0, 0.699)">Thank you using the TC52AX hdPhone
+                Replacement form.Please describe the nature of your problem in the fileds below.</h4>
+            <h4 fxLayoutAlign="center center" style="color:black">For non-damage related issues,please call Technology
+                Supports Center:800-791-2750
+            </h4>
+            <h3 fxLayoutAlign="center center" style="color:rgb(255, 0, 0);"><b>Do not use this form for devices stuck on
+                    enrolling, the TSC can fix your device if you call it in.</b></h3>
+        </div>
+        <form [formGroup]="sample" (ngSubmit)="submit()">
+            <div fxLayout="row" fxLayoutAlign="space-between Start" fxLayout.xs="column" >
+                <div  fxLayout="column" fxFlex="24" appearance="outline" >
+                    <mat-label >LADP<span>*</span></mat-label>
+                    <input  type="text" formControlName="LADP" placeholder="RTESTUSER03" />
+                    <mat-error *ngIf="sample.controls.LADP.errors?.required && sample.controls.LADP.touched">
+                        Please fill out this field</mat-error>
+                    <mat-error *ngIf="sample.controls.LADP.errors?.pattern"> Enter characters only</mat-error>
+                </div>
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Name<span>*</span></mat-label>
+                    <input  type="text" formControlName="Name" placeholder="Rachel Testuser03" />
+                    <mat-error *ngIf="sample.controls.Name.errors?.required && sample.controls.Name.touched">Name
+                        must be required</mat-error>
+                    <mat-error *ngIf="sample.controls.Name.errors?.pattern">Enter characters only</mat-error>
+                </div>
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Extension &nbsp;<span>#</span></mat-label>
+                    <input type="number" formControlName="Extension"  />
+                    <mat-icon  matPrefix>phone</mat-icon>
+                    <mat-error *ngIf="sample.controls.Extension.errors?.required && sample.controls.Extension.touched">
+                        Extension must be required</mat-error>
+                </div>
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Store Number<span>*</span></mat-label>
+                    <input type="text" formControlName="StoreNumber" placeholder="ST0509-LAKELINE" />
+                    <mat-error
+                        *ngIf="sample.controls.StoreNumber.errors?.required && sample.controls.StoreNumber.touched">
+                        Enter the Store Number </mat-error>
+                    <mat-error *ngIf="sample.controls.StoreNumber.errors?.pattern">Enter characters only</mat-error>
+                </div>
+            </div>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="space-between Start" fxLayout.xs="column">
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Phone Type<span>*</span></mat-label>
+                    <input type="text" formControlName="PhoneType" placeholder="RTESTUSER03" />
+                    <mat-error *ngIf="sample.controls.PhoneType.errors?.required && sample.controls.PhoneType.touched">
+                        PhoneType must be required</mat-error>
+                </div>
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Device Extension</mat-label>
+                    <input type="text" formControlName="DeviceExtension" placeholder="#" />
+                    <mat-error
+                        *ngIf="sample.controls.DeviceExtension.errors?.required && sample.controls.DeviceExtension.touched">
+                        Required</mat-error>
+                </div>
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Device Serial Number<span>*</span></mat-label>
+                    <input type="text" formControlName="DeviceSerialNumber" />
+                    <mat-error
+                        *ngIf=" sample.controls.DeviceSerialNumber.errors?.required &&  sample.controls.DeviceSerialNumber.touched">
+                        Enter the device Number</mat-error>
+                </div>
+                <div fxLayout="column" fxFlex="24">
+                    <mat-label>Damage Type<span>*</span></mat-label>
+                    <input type="text" formControlName="DamageType" />
+                    <mat-error
+                        *ngIf="sample.controls.DamageType.errors?.required && sample.controls.DamageType.touched">
+                        required damage type</mat-error>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <mat-label>Notes</mat-label><br>
+                    <input type="text" class="full-width" formControlName="Note" placeholder="" />
+                </div>
+            </div>
+            <br>
+            <div fxLayout="row">
+                <section fxFlexOffset="20">
+                    <mat-checkbox>
+                    </mat-checkbox>&nbsp;I,Rachel Testuser03(RTESTUSER03),understand that my store
+                    could be charged if the damaged device is not returned to vendor when a replacement is recevied,
+                    <div style="color:red">or our vendor determines the returned device has no damaged </div>
+                    <div fxLayout="row-reverse">
+                        <button mat-button style="background-color: #6d626273;left:15px;height: 50px;"
+                            [disabled]="sample.invalid">Submit
+                            Ticket</button>
+                    </div>
+                </section>
+            </div>
+        </form>
+    </mat-card>
+</div>
+
+
+
+
+
+
+
+<!-- <form [formGroup]="sample" (ngSubmit)="submit()">
+    <div fxLayout="row" fxLayoutAlign="space-between Start" fxLayout.xs="column">
+        <mat-form-field fxLayout="column" fxFlex="24" appearance="outline">
+                <mat-label>LADP</mat-label>
+                <input matInput type="text" formControlName="LADP" placeholder="RTESTUSER03" style="text-decoration: none;" />
+                <mat-icon fxLayout="row-reverse" matSuffix>phone</mat-icon>
+                <mat-error *ngIf="sample.controls.LADP.errors?.required && sample.controls.LADP.touched">
+                    Please fill out this field</mat-error>
+                <mat-error *ngIf="sample.controls.LADP.errors?.pattern"> Enter characters only</mat-error>
+        </mat-form-field>
+    </div>
+</form> -->
+
+
+
+
+
+<!-- <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="2:1" class="grid">
+        <mat-grid-tile fxFlex="25%" fxLayoutGap>
+            <mat-mat-label>LADP
+                <span >*</span>
+            </mat-mat-label><br>
+            <input matInput type="text" placeholder="RTESTUSER03"
+                style="position: relative;height: 24px;" />
+        </mat-grid-tile>
+        <mat-grid-tile fxFlex="25%">
+            <mat-label>Name
+                <span >*</span>
+            </mat-label><br>
+             <mat-icon matPrefix>people</mat-icon> 
+            <input matInput type="text" placeholder="" style="position: relative; height: 24px;">
+        </mat-grid-tile>
+        <mat-grid-tile fxFlex="25%">
+            <mat-label style="color:red">Extension
+                <span >#</span>
+            </mat-label><br>
+            <input matInput type="text" placeholder="" style="position: relative;height: 24px;" />
+            <mat-icon matPrefix>phone</mat-icon>
+        </mat-grid-tile>
+        <mat-grid-tile fxFlex="25%">
+            <mat-label>Store Number
+                <span >*</span>
+            </mat-label><br>
+            <input matInput type="number" placeholder="ST0509-LAKELINE"
+                style="position: relative;  height: 24px;" />
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list class="grid">
+        <mat-grid-tile fxFlex="25">
+            <mat-label>Phone Type
+                <span >*</span>
+            </mat-label><br>
+            <input matInput type="text" placeholder="store" style="position: relative; height: 24px;" />
+            <mat-select [(value)]="selected">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Option 1</mat-option>
+                    <mat-option value="option2">Option 2</mat-option>
+                    <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+        </mat-grid-tile>
+        <mat-grid-tile fxFlex="25%">
+            <mat-label>Device Extension</mat-label><br>
+            <input matInput type="text" placeholder="#" style="position: relative;  height: 24px;" />
+        </mat-grid-tile>
+        <mat-grid-tile fxFlex="25%">
+            <mat-label style="color:red">Device Serial Number
+                <span >*</span>
+            </mat-label><br>
+            <input matInput type="number" placeholder="" style="position: relative;  height: 24px;" />
+        </mat-grid-tile>
+        <mat-grid-tile fxFlex="25%">
+            <mat-label style="color:red">Damage Type
+                <span >*</span>
+            </mat-label><br>
+            <input matInput type="text" placeholder="" style="position: relative;  height: 24px;" />
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list>
+        <mat-grid-tile>
+            <mat-label>Notes</mat-label><br>
+            <input matInput type="text" class="full-width" placeholder="" style="position:relative;height: 69px;" />
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list>
+        <mat-grid-title fxLayout="row" style="position: relative;top:30px;">
+            <section fxFlexOffset="20">
+                <mat-checkbox>I,Rachel Testuser03(RTESTUSER03),understand that my store could be
+                    charged if the damaged device is not returned to vendor when a replacement is recevied,
+                    <p style="color:red">or our vendor determines the returned device has not damaged </p>
+                </mat-checkbox>
+                <button mat-button style="background-color: #6d626273;;left: 87px;height: 50px;">Submit
+                    Ticket</button>
+            </section>
+        </mat-grid-title>
+    </mat-grid-list>
+    </mat-card-content> -->
+
+<!-- <mat-form-field>
+    <mat-label> name </mat-label>
+    <mat-icon matPrefix>people</mat-icon>
+    <input matInput  type="text" />
+  </mat-form-field> -->

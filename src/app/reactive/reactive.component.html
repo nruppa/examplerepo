@@ -1,0 +1,57 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main">
+    <mat-card fxFlex="30" fxFlex.xs="95">
+        <mat-toolbar color="primary">
+            <div fxLayoutAlign="center center" fxFlex>
+                <span>Reactive Forms</span>
+            </div>
+        </mat-toolbar>
+        <mat-card-content >
+            <form [formGroup]="login">
+                <mat-form-field class="full-width">
+                    <mat-label>UserName</mat-label>
+                    <input matInput formControlName="username" placeholder="username">
+                    <mat-error *ngIf="login.controls.username.errors?.required && login.controls.username.touched">Name
+                        must be required</mat-error>
+                    <mat-error *ngIf="login.controls.username.errors?.pattern"> Enter characters only</mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password" />
+                    <mat-error *ngIf="login.controls.password.errors?.required">Enter password </mat-error>
+                    <mat-error *ngIf="login.controls.password.errors?.pattern">incorrect password </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput formControlName="dateofbirth" [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="login.controls.dateofbirth.errors?.required">required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput formControlName="Address"></textarea>
+                    <mat-error *ngIf="login.controls.Address.errors?.required"> Enter Address</mat-error>
+                </mat-form-field><br>
+                <mat-form-field class="full-width">
+                    <mat-label>Select an field</mat-label>
+                    <mat-select [(value)]="selected" formControlName="Selectanfield">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="login.controls.Selectanfield.errors?.required"> This field is required</mat-error>
+                </mat-form-field>
+                <mat-label>Gender:</mat-label>&NonBreakingSpace;
+                <mat-radio-group formControlName="gender" class="full-width">
+                    <mat-radio-button value="male">Male</mat-radio-button>&NonBreakingSpace;
+                    <mat-radio-button value="female">Female</mat-radio-button>&NonBreakingSpace;
+                </mat-radio-group><br>
+                <mat-error *ngIf="login.controls.gender.errors?.required && login.controls.gender.touched"> This field
+                    is required</mat-error>
+                <!-- <hr> -->
+                <button mat-button (click)="submit(login.value)" color="primary"  >submit</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

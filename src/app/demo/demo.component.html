@@ -1,0 +1,50 @@
+<mat-card class="body">
+    <mat-card style="background-color: transparent;">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <button mat-button (click)="opened=!opened">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <button mat-button routerLink="">Home</button>
+                <button mat-button (click)="open()" routerLink="login">LOGIN</button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </mat-card>
+    <mat-sidenav-container style="background-color: transparent;">
+        <mat-sidenav [(opened)]="opened" mode="side">
+            <mat-list>
+                <mat-list-item>
+                    <a mat-button routerLink="login"  class="buttonside" routerLinkActive="active" style="text-decoration: none;">Start</a><br>
+                </mat-list-item>
+                <mat-list-item>
+                    <div class="myClass"
+                    [ngStyle.xs]="{'font-size.px': 10, color: 'blue'}"
+                    [ngStyle.sm]="{'font-size.px': 20, color: 'lightblue'}"
+                    [ngStyle.md]="{'font-size.px': 30, color: 'orange'}">
+                    <a  mat-button routerLink="forms" class="buttonside" routerLinkActive="active" style="text-decoration: none">ReactiveForms</a>
+                 </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <a mat-button  routerLink="template" class="buttonside" routerLinkActive="active" style="text-decoration:none">TemplateDrivenForms</a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a mat-button  routerLink="table" class="buttonside" routerLinkActive="active" style="text-decoration:none">TableData</a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a mat-button  routerLink="tree" class="buttonside" routerLinkActive="active" style="text-decoration:none">TreeTable</a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a mat-button  routerLink="class" class="buttonside" routerLinkActive="active" style="text-decoration:none">Edit</a>
+                </mat-list-item>
+                <mat-list-item>
+                    <a mat-button  routerLink="edit" class="buttonside" routerLinkActive="active" style="text-decoration:none">EditTable</a>
+                </mat-list-item>
+             
+            </mat-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+            <!-- <button mat-button >Toggle</button> -->
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</mat-card>

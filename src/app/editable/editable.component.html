@@ -1,0 +1,97 @@
+<!-- <p>editable works!</p>
+<table mat-table [dataSource]="dataSource1">
+  <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema" >
+    <th mat-header-cell *matHeaderCellDef>
+      {{ col.label }}
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
+        <div  *ngSwitchCase="'isEdit'">
+          <button mat-button (click)="element.isEdit = !element.isEdit">
+            Edit
+          </button>
+        </div>
+        <span *ngSwitchDefault>
+          {{ element[col.key] }}
+        </span>
+      </div>
+      <div [ngSwitch]="col.type" *ngIf="element.isEdit">
+        <div *ngSwitchCase="'isEdit'">
+          <button mat-button (click)="element.isEdit = !element.isEdit">Done</button>
+        </div>
+        <mat-form-field *ngSwitchCase="'date'" appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="element[col.key]" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field *ngSwitchDefault>
+          <input [type]="col.type" matInput [(ngModel)]="element[col.key]" />
+        </mat-form-field>
+      </div>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns1"></tr>
+</table> -->
+
+
+
+
+
+<form [formGroup]="form">
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>UserName</th>
+      <td>
+        <mat-form-field mat-cell *matCellDef="let element ">
+          <input type="text" matInput formControlName="username" [(ngModel)]="element.username" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="password">
+      <th mat-header-cell *matHeaderCellDef>password</th>
+      <td>
+        <mat-form-field mat-cell *matCellDef="let element">
+          <input type="text" matInput formControlName="password" [(ngModel)]="element.password" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="dateofbirth">
+      <th mat-header-cell *matHeaderCellDef>dateofbirth</th>
+      <td>
+        <mat-form-field mat-cell *matCellDef="let element ">
+          <input matInput formControlName="dateofbirth" [matDatepicker]="picker" [(ngModel)]="element.dateofbirth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td>
+        <mat-form-field mat-cell *matCellDef="let element ">
+          <input type="text" matInput formControlName="password" [(ngModel)]="element.Address" />
+        </mat-form-field>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Selectanfield">
+      <th mat-header-cell *matHeaderCellDef> Selectanfield </th>
+      <td>
+        <mat-form-field *matCellDef="let element ">
+          <mat-select [(value)]="selected" formControlName="Selectanfield" [(ngModel)]="element.Selectanfield">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+  </table>
+</form>

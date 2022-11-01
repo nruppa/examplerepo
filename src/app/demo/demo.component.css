@@ -1,0 +1,44 @@
+.body
+{
+    flex: width 100%;
+}
+:host ::ng-deep .mat-card
+{
+    flex: width 99%;
+}
+mat-sidenav-container
+{
+    height: calc(205vh - 115vh);
+}
+mat-sidenav
+{
+    width: 200px;
+    background-color: rgba(128, 128, 128, 0.164);
+}
+.buttonside
+{
+    width: 198px;
+    top: 1px;
+    
+    /* background: aliceblue; */
+}
+mat-card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 3px;
+    border-radius: 4px;
+}
+.active
+{
+    background-color: whitesmoke;
+}
+/* flex: 1 1 100%;
+box-sizing: border-box;
+max-width: 88%; */
+/* @media screen and (max-width: 320px) {
+
+flex: 1 1 100%;
+box-sizing: border-box;
+max-width: 88%; 
+  } */

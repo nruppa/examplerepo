@@ -1,0 +1,28 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card  fxFlex="30">
+      <mat-toolbar color="primary">
+        <span>LOGIN</span><br>
+      </mat-toolbar>
+      <mat-card-content class="body1">
+        <form [formGroup]="login">
+          <mat-form-field>
+            <mat-label>UserName</mat-label>
+            <input matInput formControlName="username" placeholder="UserName">
+          </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="open()">Open file</button>
+      </mat-card-content>
+    </mat-card>
+</div>
+
+<!-- <h1 mat-dialog-title>Hi</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button >No Thanks</button>
+</div> -->
