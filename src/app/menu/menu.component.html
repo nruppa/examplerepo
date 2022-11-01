@@ -21,6 +21,18 @@
 </div>
 <button (click)="addItem()">Add</button> -->
 
+<div [formGroup]="Form">
+  <div formArrayName="items" *ngFor="let item of Form.get('items').controls; let i = index;">
+    <div [formGroupName]="i">
+      <input formControlName="name" placeholder=" name">
+      <input formControlName="password" placeholder=" password">
+    </div>
+  </div>
+</div>
+<button (click)="addItem()">Add</button>
+
+
+
 
 <!-- <form [formGroup]="form">
   <input type="checkbox" formControlName="published"> Published
