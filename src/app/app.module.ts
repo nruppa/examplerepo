@@ -46,6 +46,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { TreeComponent } from './tree/tree.component';
 import { EditComponent } from './edit/edit.component';
 import { ClassComponent } from './class/class.component';
+import { AddComponent } from './add/add.component';
 
 
 
@@ -71,7 +72,8 @@ import { ClassComponent } from './class/class.component';
     EditableComponent,
     TreeComponent,
     EditComponent,
-    ClassComponent
+    ClassComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
