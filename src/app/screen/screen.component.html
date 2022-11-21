@@ -1,4 +1,4 @@
-<div >
+<div>
     <mat-card>
         <div>
             <h1 fxLayoutAlign="center center" style="color:rgba(255, 123, 0, 0.973);">Damaged TC52AX hdPhone Replacement
@@ -15,25 +15,25 @@
                     enrolling, the TSC can fix your device if you call it in.</b></h3>
         </div>
         <form [formGroup]="sample" (ngSubmit)="submit()">
-            <div fxLayout="row" fxLayoutAlign="space-between Start" fxLayout.xs="column" >
-                <div  fxLayout="column" fxFlex="24" appearance="outline" >
-                    <mat-label >LADP<span>*</span></mat-label>
-                    <input  type="text" formControlName="LADP" placeholder="RTESTUSER03" />
+            <div fxLayout="row" fxLayoutAlign="space-between Start" fxLayout.xs="column">
+                <div fxLayout="column" fxFlex="24" appearance="outline">
+                    <mat-label>LADP<span>*</span></mat-label>
+                    <input type="text" formControlName="LADP" placeholder="RTESTUSER03" />
                     <mat-error *ngIf="sample.controls.LADP.errors?.required && sample.controls.LADP.touched">
                         Please fill out this field</mat-error>
                     <mat-error *ngIf="sample.controls.LADP.errors?.pattern"> Enter characters only</mat-error>
                 </div>
                 <div fxLayout="column" fxFlex="24">
                     <mat-label>Name<span>*</span></mat-label>
-                    <input  type="text" formControlName="Name" placeholder="Rachel Testuser03" />
+                    <input type="text" formControlName="Name" placeholder="Rachel Testuser03" />
                     <mat-error *ngIf="sample.controls.Name.errors?.required && sample.controls.Name.touched">Name
                         must be required</mat-error>
                     <mat-error *ngIf="sample.controls.Name.errors?.pattern">Enter characters only</mat-error>
                 </div>
                 <div fxLayout="column" fxFlex="24">
                     <mat-label>Extension &nbsp;<span>#</span></mat-label>
-                    <input type="number" formControlName="Extension"  />
-                    <mat-icon  matPrefix>phone</mat-icon>
+                    <input type="number" formControlName="Extension" />
+                    <mat-icon matPrefix>phone</mat-icon>
                     <mat-error *ngIf="sample.controls.Extension.errors?.required && sample.controls.Extension.touched">
                         Extension must be required</mat-error>
                 </div>

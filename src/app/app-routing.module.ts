@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PatchComponent } from './patch/patch.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
+import { ScreenComponent } from './screen/screen.component';
 import { TableComponent } from './table/table.component';
 import { TabledataComponent } from './tabledata/tabledata.component';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'tpatch', component: TemppatchComponent },
   {path:'tree',component:TreeComponent},
   // {path:'edit',component:EditableComponent},
-  {path:'class',component:EditComponent}
+  {path:'class',component:EditComponent},
+  {path:'screen',component:ScreenComponent}
 ];
 
 @NgModule({

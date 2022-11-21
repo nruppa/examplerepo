@@ -12,7 +12,7 @@ import { TestService } from '../test.service';
 export class TableComponent implements OnInit {
 
   value: any;
-  selected: any;
+  selected: any=[];
   formvalue: any = [];
   userdata: any = [];
   displayedColumns: string[] = ['username', 'password', 'dateofbirth', 'Address', 'Selectanfield'];
@@ -23,7 +23,7 @@ export class TableComponent implements OnInit {
     { label: "dateofbirth", type: "date", key: "dateofbirth" },
     { label: "Address", type: "text", key: "Address" },
     { label: "gender", type: "radio", key: "gender" },
-    { label: "Selectanfield", type: "selected", key: "Selectanfield" },
+    { label: "Selectanfield", type: "select", key: "Selectanfield" },
     { label: "edit", type: "edit", key: "" }
   ]
   dataSource = [{
@@ -70,5 +70,5 @@ export class TableComponent implements OnInit {
       this.dataSource.push(dat)
     })
   }
-
+  fixedSizeData = Array(10000).fill(30);
 }

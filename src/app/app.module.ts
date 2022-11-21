@@ -47,6 +47,7 @@ import { TreeComponent } from './tree/tree.component';
 import { EditComponent } from './edit/edit.component';
 import { ClassComponent } from './class/class.component';
 import { AddComponent } from './add/add.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 
@@ -100,7 +101,8 @@ import { AddComponent } from './add/add.component';
     MatSelectModule,
     MatTableModule,
     MatCheckboxModule,
-    MatTreeModule
+    MatTreeModule,
+    ScrollingModule
 
 
 

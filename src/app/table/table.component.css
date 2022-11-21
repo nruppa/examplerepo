@@ -2,6 +2,21 @@ table {
     width: 100%;
     /* font-family: "Open Sans", sans-serif */
 }
-.full-width{
-    width:100%
+
+.full-width {
+    width: 100%
+}
+
+.example-viewport {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+.item {
+    height: 50px;
+}
+
+.list-group-item {
+    height: 30px;
 }

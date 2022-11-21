@@ -24,7 +24,9 @@ export class ReactiveComponent implements OnInit {
       gender: ['', Validators.required],
       Selectanfield: ['', Validators.required],
     })
+
   }
+  
   submit(data: any) {
     // console.log(data)
     const dialogRef = this.dialog.open(UserComponent, {
@@ -33,6 +35,7 @@ export class ReactiveComponent implements OnInit {
     this.test.formdata.next(data)
 
   }
+
 }
 // this.test.login = data.login
 // console.log(this.test.login)
