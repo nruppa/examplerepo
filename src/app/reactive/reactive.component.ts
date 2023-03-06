@@ -10,10 +10,14 @@ import { UserComponent } from '../user/user.component';
   styleUrls: ['./reactive.component.css']
 })
 export class ReactiveComponent implements OnInit {
+  radio = "";
+
   displayedColumns: string[] = ['username', 'password', 'dateofbirth', 'Address', 'gender', 'Selectanfield'];
   login: any
   selected: any
   formdata: any;
+  display!: any;
+  value: any;
   constructor(private fb: FormBuilder, public dialog: MatDialog, private test: TestService) { }
   ngOnInit(): void {
     this.login = this.fb.group({
@@ -24,16 +28,13 @@ export class ReactiveComponent implements OnInit {
       gender: ['', Validators.required],
       Selectanfield: ['', Validators.required],
     })
-
   }
-  
   submit(data: any) {
-    // console.log(data)
-    const dialogRef = this.dialog.open(UserComponent, {
-      width: '250px',
-    });
+    console.log(data)
+    // const dialogRef = this.dialog.open(UserComponent, {
+    //   width: '250px',
+    // });
     this.test.formdata.next(data)
-
   }
 
 }

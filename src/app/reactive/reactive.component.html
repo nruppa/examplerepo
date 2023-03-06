@@ -5,7 +5,7 @@
                 <span>Reactive Forms</span>
             </div>
         </mat-toolbar>
-        <mat-card-content >
+        <mat-card-content>
             <form [formGroup]="login">
                 <mat-form-field class="full-width">
                     <mat-label>UserName</mat-label>
@@ -44,13 +44,17 @@
                 </mat-form-field>
                 <mat-label>Gender:</mat-label>&NonBreakingSpace;
                 <mat-radio-group formControlName="gender" class="full-width">
-                    <mat-radio-button value="male">Male</mat-radio-button>&NonBreakingSpace;
-                    <mat-radio-button value="female">Female</mat-radio-button>&NonBreakingSpace;
-                </mat-radio-group><br>
+                    <mat-radio-button value="male" type="radio" >Male </mat-radio-button>&NonBreakingSpace;
+                    <mat-radio-button value=" female" >Female</mat-radio-button>&NonBreakingSpace;
+                </mat-radio-group>
+                <!-- <div *ngIf="radio=='male'">
+                    <input>
+                </div> -->
+                <br>
                 <mat-error *ngIf="login.controls.gender.errors?.required && login.controls.gender.touched"> This field
                     is required</mat-error>
                 <!-- <hr> -->
-                <button mat-button (click)="submit(login.value)" color="primary"  >submit</button>
+                <button mat-button (click)="submit(login.value)" routerLink="/table" color="primary">submit</button>
             </form>
         </mat-card-content>
     </mat-card>

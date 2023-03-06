@@ -37,7 +37,7 @@ export class TableComponent implements OnInit {
   form: any;
   constructor(private test: TestService, private router: Router, private fb: FormBuilder) { }
   table!: MatTable<any>
-
+  
   ngOnInit(): void {
     this.form = this.fb.group({
       username: [''],
@@ -51,14 +51,13 @@ export class TableComponent implements OnInit {
     this.test.formdata.subscribe((res: any) => {
       // console.log('data',res)
       this.formvalue = res;
+      // this.dataSource.push(res)
     })
     this.test.tabledata.subscribe((res: any) => {
       this.formvalue = res;
     })
-
     this.user();
   }
-
   edit(data: any) {
     console.log(data)
     // this.edit = data.username

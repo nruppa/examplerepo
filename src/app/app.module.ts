@@ -103,9 +103,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatCheckboxModule,
     MatTreeModule,
     ScrollingModule
-
-
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

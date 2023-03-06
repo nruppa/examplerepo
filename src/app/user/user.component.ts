@@ -9,7 +9,8 @@ import { ReactiveformsComponent } from '../reactiveforms/reactiveforms.component
 })
 export class UserComponent implements OnInit {
   dataSource: any;
-  constructor(public dialogRef: MatDialogRef<ReactiveformsComponent>) {}
+  dialogRef: any;
+  constructor() {}
 
   ngOnInit(): void {
 

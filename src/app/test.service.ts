@@ -6,9 +6,9 @@ import { ReplaySubject } from 'rxjs/internal/ReplaySubject';
   providedIn: 'root'
 })
 export class TestService implements OnInit{
-  dataSource:any=[];
   // dataSource:any=[];
-  login: any=[];
+  // dataSource:any=[];
+  // login: any=[];
  
   
   
@@ -16,7 +16,6 @@ export class TestService implements OnInit{
   // formdata = new BehaviorSubject<any>([]);
   formdata = new ReplaySubject<any>();
   tabledata = new ReplaySubject<any>();
-
   tformdata=new ReplaySubject<any>();
   ttabledata = new ReplaySubject<any>();
 

@@ -43,7 +43,6 @@ export class EditableComponent implements OnInit {
     }
 ]
   displayedColumns1: string[] = ['name', 'occupation',  'dateOfBirth', 'age','isEdit'];
-
   value: any;
   selected:any;
   formvalue: any = [];
@@ -62,7 +61,7 @@ export class EditableComponent implements OnInit {
   dataSource = [{
     Address: "tyt",
     Selectanfield: "option1",
-    dateofbirth: " ",
+    dateofbirth: "",
     gender: "male",
     password: "1111111111",
     username: "tyhtu"
@@ -80,6 +79,5 @@ export class EditableComponent implements OnInit {
       gender: [''],
       Selectanfield: [''],
     })
-
 }
 }

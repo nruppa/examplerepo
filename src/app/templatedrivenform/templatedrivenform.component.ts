@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
 import { TestService } from '../test.service';
-import { UsersComponent } from '../users/users.component';
+import { UserComponent } from '../user/user.component';
 
 @Component({
   selector: 'app-templatedrivenform',
@@ -25,14 +25,11 @@ export class TemplatedrivenformComponent implements OnInit {
   table!: MatTable<any>
   submit(data: any) {
     // console.log(data)
+    const dialogRef = this.dialog.open(UserComponent, {
+      width: '250px',
+    });
     this.test.tformdata.next(data)
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(UsersComponent, {
-      width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-    });
-  }
-  }
+}
+  
